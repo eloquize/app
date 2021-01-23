@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon -r dotenv/config server",
     "client": "webpack serve --config webpack.dev.js --open",
-    "build": "webpack --config webpack.dev.js"
+    "build": "webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "html-webpack-plugin": "^4.5.1",

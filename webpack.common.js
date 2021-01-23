@@ -10,6 +10,7 @@ module.exports = {
   entry: './index.jsx',
   output: {
     path: DIST_DIR,
+    publicPath: '/',
     filename: 'bundle.js',
   },
   resolve: {
@@ -26,7 +27,6 @@ module.exports = {
   },
   plugins: [new HtmlWebpackPlugin({
     title: 'App Name',
-    // inject: false,
     template,
     appMountId: 'app',
   })],

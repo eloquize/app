@@ -4,11 +4,11 @@ const common = require('./webpack.common.js');
 
 require('dotenv').config();
 
-const DIST_DIR = path.join(__dirname, '../public');
+const BUILD_DIR = path.join(__dirname, '../public');
 
 module.exports = merge(common, {
   devServer: {
-    contentBase: DIST_DIR,
+    contentBase: BUILD_DIR,
     proxy: {
       '/': `http://${process.env.HOST}:${process.env.PORT}`,
     },

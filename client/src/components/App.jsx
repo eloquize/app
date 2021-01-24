@@ -20,6 +20,7 @@ function App() {
 
   return (
     <div>
+      <img className="login-background" src='./backgroundbackground.svg' alt="bg" />
       <span>Welcome</span>
       <div className="navigation" className="center-left">
         <div className="logo-left">eloquize</div>

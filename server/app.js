@@ -22,4 +22,12 @@ app.get('/api/questions', (req, res) => {
     .catch((err) => res.send(err));
 });
 
+app.post('/auth/login', (req, res) => {
+  res.status(200).send('Welcome!');
+});
+
+app.get('/auth/login', (req, res) => {
+  res.status(200).send('Welcome!');
+});
+
 module.exports = app;

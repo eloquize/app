@@ -1,0 +1,10 @@
+{ "id": 1, "question": "Tell me about yourself!", "times": 2, "keys": ["Passion", "Creativity"]}
+{ "id": 2, "question": "What Are You Passionate About?", "times": 3, "keys": ["Information Technology", "Problem-Solving"]}
+{ "id": 3, "question": "Where Do You See Yourself in Five Years?", "times": 1, "keys": ["Leadership", "Loyalty"]}
+{ "id": 4, "question": "What Type of Work Environment Do You Prefer?", "times": 0, "keys": ["Inclusive", "Supportive"]}
+{ "id": 5, "question": "Give me an example of a time you were able to be creative with your work. What was exciting or difficult about it?", "keys": ["Positivity", "Creativity"], "times": 2}
+{ "id": 6, "question": "Tell me about your proudest professional accomplishment", "keys": ["Passion"], "times": 0}
+{ "id": 7, "question": "How Do You Deal With Pressure or Stressful Situations?", "keys": ["Positivity", "Responsibility", "Communicative"], "times": 5}
+{ "id": 8, "question": "What Do You Consider to Be Your Weaknesses?", "keys": ["Overcome weaknesses", "Problem-Solving"], "times": 0}
+{ "id": 9, "question": "What Are You Looking for in a New Position?", "keys": ["Passion", "Professional Development"], "times": 0}
+{ "id": 10, "question": "What Makes You Unique?", "keys": ["Strength", "Self-Motivation", "Problem-Solving"], "times": 0}

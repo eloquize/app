@@ -1,21 +1,21 @@
-body {
+/* body {
   font-family: Comfortaa;
   font-style: normal;
   font-weight: normal;
   color: #000000;
-}
+} */
 
-.wrapper {
-  /* background-image: url("../build/background.svg"); */
+/* .wrapper {
+  background-image: url("./background.svg");
   background-size: cover;
   background-repeat: no-repeat;
   min-width: 100vw;
   min-height: 100vh;
-}
+} */
 
 /* login page styling */
 
-.center {
+/* .center {
   position: absolute;
   top: 30%;
   left: 30%;
@@ -67,7 +67,7 @@ body {
 
 .eloquize {
   font-size: 50px;
-}
+} */
 
 /* nav bar styling */
 

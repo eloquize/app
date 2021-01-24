@@ -38,7 +38,7 @@ export default function Speech() {
   console.log(speech);
 
   return (
-    <div>
+    <div className="center">
       <button type="button" onClick={() => { fromMic(); }}>start recording</button>
       <button type="button" onClick={() => { stopMic(); }}>stop recording</button>
       <form>

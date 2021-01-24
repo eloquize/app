@@ -9,6 +9,7 @@ import { getQuestions } from '../utils/api';
 import Login from './Login';
 import Questions from './Questions';
 import Speech from './Speech';
+import background from '../background.svg';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -27,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Wrapper = styled.div`
-  background-image: url("../background.svg");
+  background-image: url(${background});
   background-size: cover;
   background-repeat: no-repeat;
   min-width: 100vw;
@@ -49,6 +50,7 @@ function App() {
     <Router>
       <GlobalStyle />
       <Wrapper>
+
         <Switch>
           <Route path="/questions">
             <Questions questions={questions} />

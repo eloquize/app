@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const template = require('html-webpack-template');
@@ -28,7 +29,10 @@ module.exports = {
       test: /\.css$/i,
       use: [MiniCssExtractPlugin.loader, 'css-loader'],
     }, {
-      test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
+      test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+      use: ['babel-loader', '@svgr/webpack', 'url-loader'],
+    }, {
+      test: /\.(png|jpe?g|gif|eot|ttf|woff|woff2)$/i,
       loader: 'url-loader',
     }],
   },

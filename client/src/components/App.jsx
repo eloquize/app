@@ -8,6 +8,7 @@ import { getQuestions } from '../utils/api';
 import Login from './Login';
 import Questions from './Questions';
 import Speech from './Speech';
+import background from '../background.svg';
 
 function App() {
   const [questions, setQuestions] = useState([]);
@@ -23,7 +24,7 @@ function App() {
   return (
     <Router>
       <div className="wrapper">
-        {/* <img className="background" src="./background.svg" alt="bg" /> */}
+        <img className="background" src={background} alt="bg" />
         <Switch>
           <Route path="/questions">
             <Questions questions={questions} />

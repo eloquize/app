@@ -17,6 +17,13 @@ const GlobalStyle = createGlobalStyle`
     font-weight: normal;
     color: #000000;
   }
+  a {
+    text-decoration: none;
+    color: #000000;
+  }
+  a:visited {
+    color: #000000;
+  }
 `;
 
 const Wrapper = styled.div`

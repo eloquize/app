@@ -41,12 +41,13 @@ export default function Speech() {
   return (
     <div>
       <NavBar />
-      <div>
+      <div className="center">
         <button type="button" onClick={() => { fromMic(); }}>start recording</button>
         <button type="button" onClick={() => { stopMic(); }}>stop recording</button>
         <form>
           <label>
             Diction:
+            <div />
             <textarea value={speech} onChange={handleChange} />
           </label>
         </form>

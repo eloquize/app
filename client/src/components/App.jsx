@@ -23,6 +23,7 @@ function App() {
   return (
     <Router>
       <div>
+        <img className="login-background" src='./backgroundbackground.svg' alt="bg" />
         <span>Welcome</span>
         <Switch>
           <Route path="/questions">

@@ -7,7 +7,8 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     axios.post('./login', {
       params: {
         password,
@@ -21,28 +22,31 @@ export default function Login() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>Sign In</div>
-      <input
-        value={username}
-        placeholder="username"
-        type="username"
-        onChange={(e) => {
-          e.preventDefault();
-          setUsername(e.target.value);
-        }}
-      />
-      <input
-        value={password}
-        placeholder="password"
-        type="password"
-        onChange={(e) => {
-          e.preventDefault();
-          setPassword(e.target.value);
-        }}
-      />
-      <Link to="/questions"><input type="submit" value="submit" /></Link>
-
-    </form>
+    <div className="center-right">
+      <form onSubmit={handleSubmit}>
+        <div className="title">Sign In</div>
+        <input
+          value={username}
+          placeholder="username"
+          type="username"
+          onChange={(e) => {
+            e.preventDefault();
+            setUsername(e.target.value);
+          }}
+        />
+        <br />
+        <input
+          value={password}
+          placeholder="password"
+          type="password"
+          onChange={(e) => {
+            e.preventDefault();
+            setPassword(e.target.value);
+          }}
+        />
+        <br />
+        <Link to="/questions"><input type="submit" value="submit" /></Link>
+      </form>
+    </div>
   );
 }

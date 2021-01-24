@@ -10,10 +10,10 @@ const speechConfig = sdk.SpeechConfig.fromSubscription(api, region);
 
 const Container = styled.div`
   position: absolute;
-  left: 30%;
-  top: 30%;
-  height: 50%;
-  width: 40%;
+  left: 25%;
+  top: 20%;
+  height: 60%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +33,7 @@ const QuestionTitle = styled.span`
   background: #F3CAD8;
   border-radius: 30px 30px 0px 0px;
   width: 100%;
-  min-height: 20%;
+  min-height: 15%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,10 +47,28 @@ const WordsSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 50%;
+  height: 30%;
 `;
 
-const PowerWords = styled.span`
+const DictionSection = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 35%;
+`;
+
+const DictionBox = styled.textarea`
+  font-family: Comfortaa;
+  font-style: normal;
+  font-weight: normal;
+  border-radius: 30px;
+  width: 80%;
+  max-width: 100%;
+  height: 100%;
+  padding: 20px;
+`;
+
+const SectionHeader = styled.span`
   font-size: 20px;
   margin: 20px 0;
 `;
@@ -59,7 +77,7 @@ const ButtonSection = styled.div`
   display: flex;
   justify-content: center;
   padding: 20px;
-  height: 30%;
+  height: 20%;
 `;
 
 const StyledButton = styled.button`
@@ -120,9 +138,16 @@ export default function Speech({ question }) {
         <Card>
           <QuestionTitle>{question.question}</QuestionTitle>
           <WordsSection>
-            <PowerWords>POWER WORDS:</PowerWords>
+            <SectionHeader>POWER WORDS:</SectionHeader>
             {question.keys.map((word, i) => <span key={i}>{word}</span>)}
           </WordsSection>
+          <DictionSection>
+            <SectionHeader>My recorded answer:</SectionHeader>
+            <DictionBox
+              value={speech}
+              onChange={handleChange}
+            />
+          </DictionSection>
           <ButtonSection>
             <StyledButton
               isRecording={isRecording}
@@ -130,7 +155,11 @@ export default function Speech({ question }) {
             >
               {isRecording ? 'stop' : 'record'}
             </StyledButton>
-            <StyledButton>reset</StyledButton>
+            <StyledButton
+              onClick={() => changeSpeech('')}
+            >
+              reset
+            </StyledButton>
             <StyledButton>submit</StyledButton>
           </ButtonSection>
         </Card>

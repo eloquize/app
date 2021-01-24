@@ -105,7 +105,7 @@ export default function Questions({ questions, setCurrentQuestion }) {
     <div>
       <NavBar />
       <Container>
-        <Header>current behaviorial questions:</Header>
+        <Header>current behavioral questions:</Header>
         <br />
         <Card>
           <QuestionTitle>{questions[currentIndex].question}</QuestionTitle>

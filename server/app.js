@@ -29,4 +29,8 @@ app.get('/auth/login', (req, res) => {
   res.status(200).send('Welcome!');
 });
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
+
 module.exports = app;

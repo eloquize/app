@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { getExample } from '../utils/api';
-import Speech from './Speech';
+import { getQuestions } from '../utils/api';
 import Login from './Login';
 import Questions from './Questions';
 
 function App() {
-  const [text, setText] = useState('Hello React!');
   const [login, setLogin] = useState(false);
 
+  const [questions, setQuestions] = useState([]);
+
   useEffect(() => {
-    // eslint-disable-next-line no-console
-    getExample().then(setText).catch(console.log);
+    getQuestions()
+      .then(questions => setQuestions(questions))
+      .catch(err => console.log(err))
   }, []);
 
   return (
     <div>
-      <>{text}</>
+      <span>Welcome</span>
       {login ? <div>hello</div> : <Login /> }
-      <Speech />
+      <Questions questions={questions} />
     </div>
   );
 }

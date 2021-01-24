@@ -7,10 +7,14 @@ function App() {
   const [login, setLogin] = useState(false);
 
   const [questions, setQuestions] = useState([]);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     getQuestions()
-      .then(data => setQuestions(data))
+      .then(data => {
+        setQuestions(data);
+        setLoaded(true);
+      })
       .catch(err => console.log(err));
   }, []);
 
@@ -24,7 +28,7 @@ function App() {
         <button className="logout" type="button">log out</button>
       </div>
       {login ? <div>hello</div> : <Login /> }
-      <Questions questions={questions} />
+      {loaded ? <Questions questions={questions} /> : null}
     </div>
   );
 }

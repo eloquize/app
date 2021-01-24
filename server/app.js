@@ -16,7 +16,6 @@ app.use(express.static(path.join(__dirname, '../client/build')));
 app.get('/api/questions', (req, res) => {
   models.getQuestions()
     .then((questions) => {
-      console.log(questions);
       res.send(questions);
     })
     .catch((err) => res.send(err));
@@ -28,6 +27,10 @@ app.post('/auth/login', (req, res) => {
 
 app.get('/auth/login', (req, res) => {
   res.status(200).send('Welcome!');
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
 module.exports = app;

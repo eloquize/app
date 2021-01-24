@@ -1,5 +1,5 @@
-const api = ‘f924a695ae1949539361c93137611d11’;
+const api = "f924a695ae1949539361c93137611d11";
 
-const region = ‘westus’;
+const region = "westus";
 
 module.exports = { api, region };

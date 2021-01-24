@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 const sdk = require('microsoft-cognitiveservices-speech-sdk');
+//api
 const { api, region } = require('../utils/speech.js');
 
 const speechConfig = sdk.SpeechConfig.fromSubscription(api, region);

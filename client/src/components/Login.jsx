@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
   const [userId, setUserId] = useState('');
@@ -44,7 +45,7 @@ export default function Login() {
           }}
         />
         <br />
-        <input type="submit" value="submit" />
+        <Link to="/questions"><input type="submit" value="submit" /></Link>
       </form>
     </div>
   );

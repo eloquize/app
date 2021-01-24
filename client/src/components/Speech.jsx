@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import NavBar from './NavBar';
 
 const sdk = require('microsoft-cognitiveservices-speech-sdk');
 //api
@@ -38,16 +39,19 @@ export default function Speech() {
   console.log(speech);
 
   return (
-    <div className="center">
-      <button type="button" onClick={() => { fromMic(); }}>start recording</button>
-      <button type="button" onClick={() => { stopMic(); }}>stop recording</button>
-      <form>
-        <label>
-          Diction:
-          <div />
-          <textarea value={speech} onChange={handleChange} />
-        </label>
-      </form>
+    <div>
+      <NavBar />
+      <div className="center">
+        <button type="button" onClick={() => { fromMic(); }}>start recording</button>
+        <button type="button" onClick={() => { stopMic(); }}>stop recording</button>
+        <form>
+          <label>
+            Diction:
+            <div />
+            <textarea value={speech} onChange={handleChange} />
+          </label>
+        </form>
+      </div>
     </div>
   );
 }

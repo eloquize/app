@@ -1,36 +1,43 @@
 import React, { useState, useEffect } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
 import { getQuestions } from '../utils/api';
 import Login from './Login';
 import Questions from './Questions';
+import Speech from './Speech';
 
 function App() {
-  const [login, setLogin] = useState(false);
-
   const [questions, setQuestions] = useState([]);
-  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     getQuestions()
-      .then(data => {
+      .then((data) => {
         setQuestions(data);
-        setLoaded(true);
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   }, []);
 
   return (
-    <div>
-      <img className="login-background" src='./backgroundbackground.svg' alt="bg" />
-      <span>Welcome</span>
-      <div className="navigation" className="center-left">
-        <div className="logo-left">eloquize</div>
-        <div className="summary">summary</div>
-        <div className="newQ">new question</div>
-        <button className="logout" type="button">log out</button>
+    <Router>
+      <div>
+        <img className="login-background" src='./backgroundbackground.svg' alt="bg" />
+        <span>Welcome</span>
+        <Switch>
+          <Route path="/questions">
+            <Questions questions={questions} />
+          </Route>
+          <Route path="/speech">
+            <Speech />
+          </Route>
+          <Route path="/">
+            <Login />
+          </Route>
+        </Switch>
       </div>
-      {login ? <div>hello</div> : <Login /> }
-      {loaded ? <Questions questions={questions} /> : null}
-    </div>
+    </Router>
   );
 }
 

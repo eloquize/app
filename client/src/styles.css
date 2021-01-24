@@ -5,3 +5,51 @@ body {
 .test {
   color: blue;
 }
+
+/* login page  - <div>'s still need to be added to login.jsx*/
+
+.center {
+  position: absolute;
+  width: 730px;
+  height: 205px;
+  left: 25%;
+  top: 39%;
+}
+
+.logo {
+  position: relative;
+  left: 0px;
+  top: 0px;
+
+  width: 310px;
+  height: 205px
+
+}
+
+.title {
+  position: relative;
+  top: 0px;
+}
+
+.description{
+  position: relative;
+  bottom: 0px;
+}
+
+/* record page */
+
+
+.logo {
+  position: absolute;
+  width: 172px;
+  height: 40px;
+  left: 53px;
+  top: 40px;
+
+  font-family: Comfortaa;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 40px;
+}
+

@@ -4,11 +4,12 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import styled, { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import { getQuestions } from '../utils/api';
 import Login from './Login';
 import Questions from './Questions';
 import Speech from './Speech';
+import Stats from './Stats';
 import background from '../background.svg';
 
 const GlobalStyle = createGlobalStyle`
@@ -17,6 +18,9 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
     font-weight: normal;
     color: #000000;
+    background-image: url(${background});
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   a {
     text-decoration: none;
@@ -25,14 +29,6 @@ const GlobalStyle = createGlobalStyle`
   a:visited {
     color: #000000;
   }
-`;
-
-const Wrapper = styled.div`
-  background-image: url(${background});
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-width: 100vw;
-  min-height: 100vh;
 `;
 
 function App() {
@@ -49,20 +45,20 @@ function App() {
   return (
     <Router>
       <GlobalStyle />
-      <Wrapper>
-
-        <Switch>
-          <Route path="/questions">
-            <Questions questions={questions} />
-          </Route>
-          <Route path="/speech">
-            <Speech />
-          </Route>
-          <Route path="/">
-            <Login />
-          </Route>
-        </Switch>
-      </Wrapper>
+      <Switch>
+        <Route path="/questions">
+          <Questions questions={questions} />
+        </Route>
+        <Route path="/speech">
+          <Speech />
+        </Route>
+        <Route path="/stats">
+          <Stats />
+        </Route>
+        <Route path="/">
+          <Login />
+        </Route>
+      </Switch>
     </Router>
   );
 }

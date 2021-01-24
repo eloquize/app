@@ -3,6 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const template = require('html-webpack-template');
 const path = require('path');
+const webpack = require('webpack');
+require('dotenv').config();
 
 const SRC_DIR = path.join(__dirname, 'client', 'src');
 const BUILD_DIR = path.join(__dirname, 'client', 'build');
@@ -43,5 +45,6 @@ module.exports = {
       'https://fonts.googleapis.com/css2?family=Comfortaa&display=swap',
     ],
     appMountId: 'app',
-  }), new MiniCssExtractPlugin()],
+  }), new MiniCssExtractPlugin(),
+  new webpack.EnvironmentPlugin(['NODE_ENV', 'AZURE_SPEECH_API_KEY', 'AZURE_SPEECH_REGION'])],
 };

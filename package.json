@@ -7,7 +7,7 @@
     "server": "nodemon -r dotenv/config",
     "client": "webpack serve --config webpack.dev.js --open",
     "build": "webpack --config webpack.prod.js",
-    "seed": "mongoimport --db gamification --collection questions --drop --file db/questions.json"
+    "seed": "mongoimport --uri mongodb://eloquize:6H2AHeAJbkgVcO6ItAgftmksRaaEQdjv5kxQyfigQgzoRcVkLS6CIi2YxVTJRlXeaUr0VVT5oeRVo3uKs7zn6w%3D%3D@eloquize.documents.azure.com:10255/gamification?ssl=true&replicaSet=globaldb&retrywrites=false --file db/questions.json"
   },
   "repository": {
     "type": "git",
@@ -40,6 +40,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "@auth0/auth0-react": "^1.2.0",
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",

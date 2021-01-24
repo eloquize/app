@@ -18,6 +18,7 @@ function App() {
       <>{text}</>
       {login ? <div>hello</div> : <Login /> }
       <Speech />
+      <Questions />
     </div>
   );
 }

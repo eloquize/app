@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function Question(){
+export default function Questions() {
  const [questions, setQuestions] = useState([]);
 
  return (

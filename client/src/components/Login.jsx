@@ -25,12 +25,13 @@ export default function Login() {
     <div className="center">
       <div className="center-left">
         <span className="eloquize">eloquize</span>
+        <br />
         <span>behaviorial interview prep made easy</span>
       </div>
-      <div className="center-right">
-        <form onSubmit={handleSubmit}>
-          <div className="title">Sign In</div>
+        <form className="center-right" onSubmit={handleSubmit}>
+          <span>Log In</span>
           <input
+            className="form-input"
             value={username}
             placeholder="username"
             type="username"
@@ -39,8 +40,8 @@ export default function Login() {
               setUsername(e.target.value);
             }}
           />
-          <br />
           <input
+            className="form-input"
             value={password}
             placeholder="password"
             type="password"
@@ -49,10 +50,14 @@ export default function Login() {
               setPassword(e.target.value);
             }}
           />
-          <br />
-          <Link to="/questions"><input type="submit" value="submit" /></Link>
+          <Link to="/questions">
+            <input
+              className="submit"
+              type="submit"
+              value="submit"
+            />
+          </Link>
         </form>
-      </div>
     </div>
   );
 }

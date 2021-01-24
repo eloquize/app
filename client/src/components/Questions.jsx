@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import NavBar from './NavBar';
 
 export default function Questions({ questions }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -6,12 +8,13 @@ export default function Questions({ questions }) {
     if (currentIndex === questions.length - 1) {
       setCurrentIndex(0);
     } else {
-      setCurrentIndex(prevIndex => prevIndex + 1);
+      setCurrentIndex((prevIndex) => prevIndex + 1);
     }
   };
 
   return (
     <div>
+      <NavBar />
       <span>Current Behaviorial Questions</span>
       <div>
         <span>{questions[currentIndex].question}</span>
@@ -27,8 +30,15 @@ export default function Questions({ questions }) {
         </div>
         <br />
         <div>
-          <button onClick={() => nextQuestion()}>Next question</button>
-          <button>Practice now</button>
+          <button
+            type="button"
+            onClick={() => nextQuestion()}
+          >
+            Next question
+          </button>
+          <Link to="/speech">
+            <button type="button">Practice now</button>
+          </Link>
         </div>
       </div>
     </div>

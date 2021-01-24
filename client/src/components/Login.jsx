@@ -22,31 +22,42 @@ export default function Login() {
   };
 
   return (
-    <div className="center-right">
-      <form onSubmit={handleSubmit}>
-        <div className="title">Sign In</div>
-        <input
-          value={username}
-          placeholder="username"
-          type="username"
-          onChange={(e) => {
-            e.preventDefault();
-            setUsername(e.target.value);
-          }}
-        />
+    <div className="center">
+      <div className="center-left">
+        <span className="eloquize">eloquize</span>
         <br />
-        <input
-          value={password}
-          placeholder="password"
-          type="password"
-          onChange={(e) => {
-            e.preventDefault();
-            setPassword(e.target.value);
-          }}
-        />
-        <br />
-        <Link to="/questions"><input type="submit" value="submit" /></Link>
-      </form>
+        <span>behaviorial interview prep made easy</span>
+      </div>
+        <form className="center-right" onSubmit={handleSubmit}>
+          <span>Log In</span>
+          <input
+            className="form-input"
+            value={username}
+            placeholder="username"
+            type="username"
+            onChange={(e) => {
+              e.preventDefault();
+              setUsername(e.target.value);
+            }}
+          />
+          <input
+            className="form-input"
+            value={password}
+            placeholder="password"
+            type="password"
+            onChange={(e) => {
+              e.preventDefault();
+              setPassword(e.target.value);
+            }}
+          />
+          <Link to="/questions">
+            <input
+              className="submit"
+              type="submit"
+              value="submit"
+            />
+          </Link>
+        </form>
     </div>
   );
 }

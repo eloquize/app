@@ -17,6 +17,12 @@ function App() {
   return (
     <div>
       <span>Welcome</span>
+      <div className="navigation">
+        <div className="logo">eloquize</div>
+        <div className="summary">summary</div>
+        <div className="newQ">new question</div>
+        <button className="logout" type="button">log out</button>
+      </div>
       {login ? <div>hello</div> : <Login /> }
       <Questions questions={questions} />
     </div>

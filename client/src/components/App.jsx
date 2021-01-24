@@ -10,8 +10,8 @@ function App() {
 
   useEffect(() => {
     getQuestions()
-      .then(questions => setQuestions(questions))
-      .catch(err => console.log(err))
+      .then(data => setQuestions(data))
+      .catch(err => console.log(err));
   }, []);
 
   return (

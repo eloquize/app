@@ -27,11 +27,17 @@ module.exports = {
     }, {
       test: /\.css$/i,
       use: [MiniCssExtractPlugin.loader, 'css-loader'],
+    }, {
+      test: /\.svg$/,
+      loader: 'svg-inline-loader',
     }],
   },
   plugins: [new HtmlWebpackPlugin({
     title: 'App Name',
     template,
+    links: [
+      'https://fonts.googleapis.com/css2?family=Comfortaa&display=swap',
+    ],
     appMountId: 'app',
   }), new MiniCssExtractPlugin()],
 };

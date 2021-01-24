@@ -81,7 +81,7 @@ export default function Login() {
       <TitleContainer>
         <Title>eloquize</Title>
         <br />
-        <span>behaviorial interview prep made easy</span>
+        <span>behavioral interview prep made easy</span>
       </TitleContainer>
       <Form onSubmit={handleSubmit}>
         <span>Log In</span>

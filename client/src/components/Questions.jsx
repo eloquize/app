@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import NavBar from './NavBar';
@@ -82,15 +82,24 @@ const StyledButton = styled.button`
   margin: 0 10px;
 `;
 
-export default function Questions({ questions }) {
+export default function Questions({ questions, setCurrentQuestion }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+
   const nextQuestion = () => {
+    let index;
     if (currentIndex === questions.length - 1) {
-      setCurrentIndex(0);
+      index = 0;
     } else {
-      setCurrentIndex((prevIndex) => prevIndex + 1);
+      index = currentIndex + 1;
     }
+
+    setCurrentIndex(index);
+    setCurrentQuestion(questions[index]);
   };
+
+  useEffect(() => {
+    setCurrentQuestion(questions[currentIndex]);
+  }, []);
 
   return (
     <div>

@@ -33,6 +33,7 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   const [questions, setQuestions] = useState([]);
+  const [currentQuestion, setCurrentQuestion] = useState({});
 
   useEffect(() => {
     getQuestions()
@@ -47,10 +48,13 @@ function App() {
       <GlobalStyle />
       <Switch>
         <Route path="/questions">
-          <Questions questions={questions} />
+          <Questions
+            questions={questions}
+            setCurrentQuestion={setCurrentQuestion}
+          />
         </Route>
         <Route path="/speech">
-          <Speech />
+          <Speech question={currentQuestion} />
         </Route>
         <Route path="/stats">
           <Stats />

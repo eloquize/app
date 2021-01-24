@@ -4,7 +4,7 @@ const models = require('../db');
 
 const app = express();
 
-const router = require('./routes');
+// const router = require('./routes');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

@@ -21,9 +21,9 @@ export default function Login() {
   };
 
   return (
-    <div className="center">
+    <div className="center-right">
       <form onSubmit={handleSubmit}>
-        <div>Sign In</div>
+        <div className="title">Sign In</div>
         <input
           value={username}
           placeholder="username"
@@ -33,6 +33,7 @@ export default function Login() {
             setUsername(e.target.value);
           }}
         />
+        <br />
         <input
           value={password}
           placeholder="password"
@@ -42,6 +43,7 @@ export default function Login() {
             setPassword(e.target.value);
           }}
         />
+        <br />
         <input type="submit" value="submit" />
       </form>
     </div>

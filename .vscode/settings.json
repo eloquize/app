@@ -1,0 +1,8 @@
+{
+  "appService.zipIgnorePattern": [
+    "node_modules{,/**}",
+    ".vscode{,/**}"
+  ],
+  "appService.defaultWebAppToDeploy": "/subscriptions/7d19b00a-ef17-459e-b9f5-a66a8874b20f/resourceGroups/eloquize/providers/Microsoft.Web/sites/eloquize",
+  "appService.deploySubpath": "."
+}

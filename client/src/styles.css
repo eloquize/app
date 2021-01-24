@@ -6,7 +6,7 @@ body {
 }
 
 .wrapper {
-  background-image: url("../build/background.svg");
+  /* background-image: url("../build/background.svg"); */
   background-size: cover;
   background-repeat: no-repeat;
   min-width: 100vw;

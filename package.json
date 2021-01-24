@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -r dotenv/config server",
+    "server": "nodemon -r dotenv/config",
     "client": "webpack serve --config webpack.dev.js --open",
-    "build": "webpack --config webpack.dev.js --watch",
+    "build": "webpack --config webpack.prod.js",
     "seed": "mongoimport --db gamification --collection questions --drop --file db/questions.json"
   },
   "repository": {

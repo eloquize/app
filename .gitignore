@@ -1,5 +1,5 @@
 #sensitive info
-client/utils/speech.js
+client/src/utils/speech.js
 
 # Logs
 logs

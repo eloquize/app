@@ -14,16 +14,22 @@ export default function Questions({ questions }) {
     <div>
       <span>Current Behaviorial Questions</span>
       <div>
-        <span>Question here</span>
+        <span>{questions[currentIndex].question}</span>
         <br />
-        <span>My power words: </span>
+        <div>
+          <span>My power words:</span>
+          {questions[currentIndex].keys.map((word, i) => <span key={i}>{word}</span>)}
+        </div>
         <br />
-        <span>My power words: </span>
+        <div>
+          <span>Times practiced:</span>
+          <span>{questions[currentIndex].times}</span>
+        </div>
         <br />
-        <span>Times practiced: </span>
-        <br />
-        <button onClick={() => nextQuestion()}>Next question</button>
-        <button>Practice now</button>
+        <div>
+          <button onClick={() => nextQuestion()}>Next question</button>
+          <button>Practice now</button>
+        </div>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ const router = require('./routes');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, '../client/dist')));
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 // app.use(router);
 
@@ -20,6 +20,14 @@ app.get('/api/questions', (req, res) => {
       res.send(questions);
     })
     .catch((err) => res.send(err));
+});
+
+app.post('/auth/login', (req, res) => {
+  res.status(200).send('Welcome!');
+});
+
+app.get('/auth/login', (req, res) => {
+  res.status(200).send('Welcome!');
 });
 
 module.exports = app;

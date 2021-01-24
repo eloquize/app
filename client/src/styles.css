@@ -16,6 +16,22 @@ body {
   top: 39%;
 }
 
+.center-left {
+  position: absolute;
+  width: 730px;
+  height: 205px;
+  left: 25%;
+  top: 39%;
+}
+
+.center-right {
+  position: absolute;
+  width: 730px;
+  height: 205px;
+  left: 50%;
+  top: 39%;
+}
+
 .logo {
   position: relative;
   left: 0px;
@@ -24,6 +40,14 @@ body {
   width: 310px;
   height: 205px
 
+}
+
+.logo-left {
+  font-family: Comfortaa;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 40px;
 }
 
 .title {

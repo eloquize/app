@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import NavBar from './NavBar';
 
+const sdk = require('microsoft-cognitiveservices-speech-sdk');
+
 // api
 const { api, region } = process.env.NODE_ENV === 'production' ? { api: process.env.AZURE_SPEECH_API_KEY, region: process.env.AZURE_SPEECH_REGION } : require('../utils/speech.js');
 
